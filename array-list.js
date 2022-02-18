@@ -6,8 +6,6 @@ function arrayToList(array) {
 	return list;
 }
 
-console.log(arrayToList([10, 20]));
-
 function listToArray(list) {
 	let array = [];
 	for (let node = list; node; node = node.rest) {
@@ -16,4 +14,10 @@ function listToArray(list) {
 	return array;
 }
 
+function prepend(value, list) {
+	return {value, rest: list};
+}
+
+console.log(arrayToList([10, 20]));
 console.log(listToArray(arrayToList([10, 20])));
+console.log(prepend(10, prepend(20, null)));
